@@ -1,0 +1,26 @@
+# Source URLs for the corpus. One per line. Lines starting with # are ignored.
+#
+# These are starting points, not a finished corpus: 14 pages is enough to build
+# the pipeline, but the golden set wants 200-500. Add pages by browsing the docs
+# tree and appending URLs here -- spread them across the four topics below so
+# multi-hop and contradictory-version questions are possible.
+#
+# Topic: Service Bus
+https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview
+https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-queues-topics-subscriptions
+https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dead-letter-queues
+https://learn.microsoft.com/en-us/azure/service-bus-messaging/duplicate-detection
+https://learn.microsoft.com/en-us/azure/service-bus-messaging/message-sessions
+https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-auto-forwarding
+https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-transactions
+https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-partitioning
+https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-amqp-overview
+#
+# Topic: Blob storage
+https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction
+https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview
+https://learn.microsoft.com/en-us/azure/storage/blobs/snapshots-overview
+https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-overview
+#
+# Topic: App Configuration
+https://learn.microsoft.com/en-us/azure/azure-app-configuration/overview

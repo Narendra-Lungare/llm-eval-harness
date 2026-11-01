@@ -1,0 +1,14 @@
+# Corpus definition for Project 1.
+#
+# The snapshot date is the date the documents were fetched, not today's date.
+# Change it only when you refetch, and never compare metrics across snapshots.
+name: azure-messaging-docs
+snapshot: 2026-11-01
+raw_dir: data/raw
+include:
+  - "*.md"
+  - "*.txt"
+  - "*.html"
+exclude:
+  - "_drafts"
+min_chars: 400
