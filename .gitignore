@@ -8,3 +8,17 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Tooling caches
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+
+# Corpus artefacts (reproducible from configs/sources.txt + corpus_hash)
+data/raw/
+data/manifest.json
+runs/
+*.parquet
+
+# Local secrets
+.env

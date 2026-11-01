@@ -1,21 +1,23 @@
 [project]
 name = "llm-eval-harness"
 version = "0.1.0"
-description = "Add your description here"
+description = "Retrieval evaluation harness: measure chunking, embedding and reranking choices instead of guessing."
 readme = "README.md"
 authors = [
     { name = "Narendra Lungare", email = "narendralungare@gmail.com" }
 ]
 requires-python = ">=3.12"
 dependencies = [
+    "httpx>=0.28.1",
     "pydantic>=2.14.2",
     "pyyaml>=6.0.3",
     "rich>=15.0.0",
+    "trafilatura>=2.0.0",
     "typer>=0.27.3",
 ]
 
 [project.scripts]
-llm-eval-harness = "llm_eval_harness:main"
+harness = "llm_eval_harness.cli:app"
 
 [build-system]
 requires = ["uv_build>=0.13.6,<0.14.0"]
@@ -26,4 +28,30 @@ dev = [
     "mypy>=2.4.1",
     "pytest>=9.2.0",
     "ruff>=0.17.3",
+    "types-pyyaml>=6.0.12.20261030",
 ]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E501"]
+
+[tool.mypy]
+strict = true
+files = ["src"]
+python_version = "3.12"
+warn_unreachable = true
+
+[[tool.mypy.overrides]]
+module = ["trafilatura.*", "trafilatura"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

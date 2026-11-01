@@ -1,2 +1,3 @@
-def main() -> None:
-    print("Hello from llm-eval-harness!")
+"""Retrieval evaluation harness."""
+
+__version__ = "0.1.0"
