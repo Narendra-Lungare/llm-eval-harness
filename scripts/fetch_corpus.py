@@ -26,9 +26,7 @@ from urllib.parse import urlparse
 import httpx
 import trafilatura
 
-USER_AGENT = (
-    "llm-eval-harness/0.1 (+https://github.com/; educational retrieval evaluation corpus)"
-)
+USER_AGENT = "llm-eval-harness/0.1 (+https://github.com/; educational retrieval evaluation corpus)"
 DEFAULT_SOURCES = Path("configs/sources.txt")
 DEFAULT_OUT = Path("data/raw")
 

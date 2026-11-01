@@ -10,7 +10,9 @@ runner = CliRunner()
 
 
 def write_corpus(root: Path) -> None:
-    body = "# Queue behaviour\n\n" + ("A message moves to the dead-letter queue after delivery. " * 20)
+    body = "# Queue behaviour\n\n" + (
+        "A message moves to the dead-letter queue after delivery. " * 20
+    )
     (root / "queues.md").write_text(body, encoding="utf-8")
 
 
@@ -42,14 +44,13 @@ def test_ingest_fails_without_documents(tmp_path: Path) -> None:
     raw.mkdir()
     config = tmp_path / "corpus.yaml"
     config.write_text(
-        "name: empty\n"
-        "snapshot: 2026-11-01\n"
-        f'raw_dir: "{raw.as_posix()}"\n'
-        'include: ["*.md"]\n',
+        f'name: empty\nsnapshot: 2026-11-01\nraw_dir: "{raw.as_posix()}"\ninclude: ["*.md"]\n',
         encoding="utf-8",
     )
 
-    result = runner.invoke(app, ["ingest", "--config", str(config), "--out", str(tmp_path / "m.json")])
+    result = runner.invoke(
+        app, ["ingest", "--config", str(config), "--out", str(tmp_path / "m.json")]
+    )
 
     assert result.exit_code == 1
 

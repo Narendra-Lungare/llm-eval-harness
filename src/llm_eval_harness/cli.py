@@ -36,15 +36,15 @@ def _configure_logging(verbose: bool) -> None:
 
 @app.command()
 def ingest(
-    config: Annotated[
-        Path, typer.Option("--config", "-c", help="Corpus config file.")
-    ] = Path("configs/corpus.yaml"),
+    config: Annotated[Path, typer.Option("--config", "-c", help="Corpus config file.")] = Path(
+        "configs/corpus.yaml"
+    ),
     raw_dir: Annotated[
         Path | None, typer.Option("--raw-dir", help="Override corpus.raw_dir (smoke tests).")
     ] = None,
-    out: Annotated[
-        Path, typer.Option("--out", help="Manifest output path.")
-    ] = Path("data/manifest.json"),
+    out: Annotated[Path, typer.Option("--out", help="Manifest output path.")] = Path(
+        "data/manifest.json"
+    ),
     verbose: Annotated[bool, typer.Option("--verbose", "-v")] = False,
 ) -> None:
     """Read the corpus, normalise it, and write a reproducible manifest."""
